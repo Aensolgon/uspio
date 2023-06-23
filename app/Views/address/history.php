@@ -11,7 +11,7 @@ include 'app/Resources/layouts/header.php';
     <h1>Address History</h1>
     <ol>
         <?php foreach ($history as $address): ?>
-            <li><?php echo $address['address']; ?></li>
+            <li><?php echo $address['address']; ?> - <?php echo $address['created_at']; ?></li>
         <?php endforeach; ?>
     </ol>
 </div>
