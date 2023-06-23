@@ -1,5 +1,5 @@
 <?php
-namespace app;
+/*namespace app;
 
 use app\Config\Application;
 
@@ -10,4 +10,5 @@ require_once 'app/helpers/redirect.php';
 require_once 'app/Config/Application.php';
 
 $application = new Application();
-$application::run();
+$application::run();*/
+echo 'Hello World!';
