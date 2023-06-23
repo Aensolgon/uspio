@@ -11,8 +11,8 @@ include 'app/Resources/layouts/header.php';
     <div id="map" style="width:100%;height:88vh;"></div>
 </div>
 </body>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&libraries=places&callback=initMap"></script>
 <script src="/assets/js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&libraries=places&callback=initMap"></script>
 <?php
 include 'app/Resources/layouts/footer.php';
 ?>
