@@ -5,7 +5,7 @@ class View
 {
     public static function display($view, $data = [])
     {
-        $view = 'app/Views/'.$view.'.php';
+        $view = $_SERVER['DOCUMENT_ROOT']. '/app/Views/'.$view.'.php';
         //http://php.net/extract
         extract($data);
 
