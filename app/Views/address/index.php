@@ -4,7 +4,7 @@
     <title>Address Helper</title>
 </head>
 <?php
-include 'app/resources/layouts/header.php';
+include 'app/Resources/layouts/header.php';
 ?>
 <body>
 <div id="main-container">
@@ -14,6 +14,6 @@ include 'app/resources/layouts/header.php';
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&libraries=places&callback=initMap"></script>
 <script src="/assets/js/map.js"></script>
 <?php
-include 'app/resources/layouts/footer.php';
+include 'app/Resources/layouts/footer.php';
 ?>
 </html>
