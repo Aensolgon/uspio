@@ -5,7 +5,7 @@ class View
 {
     public static function display($view, $data = [])
     {
-        $view = __DIR__ . '/../Views/'.$view.'.php';
+        $view = 'app/Views/'.$view.'.php';
         //http://php.net/extract
         extract($data);
 
