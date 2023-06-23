@@ -8,11 +8,13 @@ class Application
     public static function run()
     {
         $target = self::getPath();
+        var_dump($target);
         if (!empty($target)) {
             $controller = $target['controller'];
             $method = $target['method'];
             $params = $target['params'];
             spl_autoload_register(static function ($class) {
+                var_dump($class);
                 include $class . '.php';
             });
             if (class_exists('\app\Controllers\\' . $controller . 'Controller')) {
@@ -25,17 +27,14 @@ class Application
                 echo 'Page Not Found 404 : Controller Not Found';
             }
         } else {
-            // read more at : http://php.net/manual/en/function.call-user-func.php
             echo call_user_func('app\Controllers\AddressController', 'index');
         }
     }
 
     private static function getPath()
     {
-        // php.net/manual/en/function.explode.php (split in js)
         $path = explode('/', $_SERVER['PATH_INFO']);
         $params = [];
-        // save params to array
         if (count($path) > 3) {
             for ($n = 3; $n < count($path); $n++) {
                 array_push($params, $path[$n]);
