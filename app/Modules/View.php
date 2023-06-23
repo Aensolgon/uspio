@@ -5,7 +5,7 @@ class View
 {
     public static function display($view, $data = [])
     {
-        $view = $_SERVER['DOCUMENT_ROOT'] . '/app/Views/'.$view.'.php';
+        $view = APP_HOST . '/app/Views/'.$view.'.php';
         extract($data);
 
         ob_start();
