@@ -4,7 +4,7 @@
     <title>Address History</title>
 </head>
 <?php
-include 'app/resources/layouts/header.php';
+include 'app/Resources/layouts/header.php';
 ?>
 <body>
 <div class="list wrapper">
@@ -17,6 +17,6 @@ include 'app/resources/layouts/header.php';
 </div>
 </body>
 <?php
-include 'app/resources/layouts/footer.php';
+include 'app/Resources/layouts/footer.php';
 ?>
 </html>

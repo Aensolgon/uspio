@@ -12,10 +12,11 @@ class Application
             $controller = $target['controller'];
             $method = $target['method'];
             $params = $target['params'];
-            spl_autoload_register(static function ($class) {
-                include ($class . '.php');
+            spl_autoload_register(function ($class) {
+                include str_replace('\\', '/', $class) . '.php';
             });
-            if (class_exists('app\Controllers\\' . $controller . 'Controller')) {
+
+            if (class_exists('\app\Controllers\\' . $controller . 'Controller')) {
                 if (method_exists('app\Controllers\\' . $controller . 'Controller', $method)) {
                     echo call_user_func(array('app\Controllers\\' . $controller . 'Controller', $method), $params);
                 } else {

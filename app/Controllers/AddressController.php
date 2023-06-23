@@ -8,7 +8,7 @@ use Exception;
 
 class AddressController
 {
-    public static function index(): bool|string
+    public static function index()
     {
         return View::display('address/index');
     }
@@ -32,7 +32,7 @@ class AddressController
         }
     }
 
-    public static function history(): bool|string
+    public static function history()
     {
         $model = new AddressModel();
         $history = $model->getHistory();
