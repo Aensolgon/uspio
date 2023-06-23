@@ -13,11 +13,12 @@ class Application
             $method = $target['method'];
             $params = $target['params'];
             spl_autoload_register(static function ($class) {
-                include APP_HOST . '/'.$class . '.php';
+                var_dump($class . '.php');
+                include $class . '.php';
             });
-            if (class_exists('\app\Controllers\\' . $controller . 'Controller')) {
+            if (class_exists('app\Controllers\\' . $controller . 'Controller')) {
                 if (method_exists('app\Controllers\\' . $controller . 'Controller', $method)) {
-                    echo call_user_func(array('\app\Controllers\\' . $controller . 'Controller', $method), $params);
+                    echo call_user_func(array('app\Controllers\\' . $controller . 'Controller', $method), $params);
                 } else {
                     echo 'Page Not Found 404 : Method Not Found in Controller ' . $controller;
                 }
