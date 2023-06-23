@@ -13,8 +13,7 @@ class Application
             $method = $target['method'];
             $params = $target['params'];
             spl_autoload_register(static function ($class) {
-                var_dump(__DIR__  . $class . '.php');
-                include __DIR__  . $class . '.php';
+                include ($class . '.php');
             });
             if (class_exists('app\Controllers\\' . $controller . 'Controller')) {
                 if (method_exists('app\Controllers\\' . $controller . 'Controller', $method)) {
