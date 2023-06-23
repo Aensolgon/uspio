@@ -8,14 +8,12 @@ class Application
     public static function run()
     {
         $target = self::getPath();
-        var_dump($target);
         if (!empty($target)) {
             $controller = $target['controller'];
             $method = $target['method'];
             $params = $target['params'];
             spl_autoload_register(static function ($class) {
-                var_dump($class);
-                include $class . '.php';
+                include $_SERVER['DOCUMENT_ROOT'] . '/'.$class . '.php';
             });
             if (class_exists('\app\Controllers\\' . $controller . 'Controller')) {
                 if (method_exists('app\Controllers\\' . $controller . 'Controller', $method)) {
